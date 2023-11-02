@@ -1,0 +1,20 @@
+name: CI
+on: [pull_request, push]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Node setup
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18.16.0"
+
+      - name: Install modules
+        run: npm install
+
+      - name: Unit tests
+        run: npm run test
