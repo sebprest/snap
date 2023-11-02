@@ -15,7 +15,9 @@ interface DrawResponse {
 }
 
 export async function shuffle(): Promise<ShuffleResponse> {
-  const res = await fetch("https://deckofcardsapi.com/api/deck/new/shuffle/");
+  const res = await fetch("https://deckofcardsapi.com/api/deck/new/shuffle/", {
+    cache: "no-cache",
+  });
 
   if (!res.ok) {
     throw new Error("Failed to shuffle deck");
