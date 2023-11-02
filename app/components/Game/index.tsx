@@ -2,8 +2,12 @@
 import { useState } from "react";
 import { draw } from "@/lib/api";
 import { Card } from "@/lib/types";
-import CardDisplay from "@/app/components/CardDisplay";
 import GameOverView from "@/app/components/GameOverView";
+import dynamic from "next/dynamic";
+
+const CardDisplay = dynamic(() => import("@/app/components/CardDisplay"), {
+  ssr: false,
+});
 
 interface GameProps {
   deckId: string;
