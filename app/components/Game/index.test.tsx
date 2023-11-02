@@ -1,5 +1,4 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import "framer-motion";
 import { draw } from "@/lib/api";
 import Game from "./";
 

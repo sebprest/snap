@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-import "framer-motion";
 import CardDisplay from "./";
 import { Card } from "@/lib/types";
 
